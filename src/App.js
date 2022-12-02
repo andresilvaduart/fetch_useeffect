@@ -7,7 +7,6 @@ import { Card } from './components/Card';
 function App() {
   const [data, setData] = useState("");
   const [page, setPage] = useState(1);
-  console.log(data);
   
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
