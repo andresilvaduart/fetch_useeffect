@@ -23,20 +23,17 @@ function App() {
       setPage(page + 1);
     }
 
-  
-
-
   return data ? (
     <div className="App">
       <h2>API RICK AND MORTY</h2>
         <div>
-          <button onClick={handlePrev}>Prev</button>
-          <button onClick={handleNext}>Next</button>
+          <button disabled={page <= 1} onClick={handlePrev}>Prev</button>
+          <button disabled={page == data.info.pages }onClick={handleNext}>Next</button>
         </div>
 
       <main className="containerDosCards">
         {data.results.map((element) => (
-          <Card key={element.className} element={element} />
+          <Card key={element.id} element={element} />
         ))}
       </main>
     </div>
